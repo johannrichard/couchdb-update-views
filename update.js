@@ -10,10 +10,11 @@ module.exports = function updateViews(db, docPath, code, cb) {
       return saveDoc(db, docPath, code, cb)
     }
 
-    var viewsPending =  shouldUpdate(doc.views, code.views)
+    var viewsPending =  shouldUpdate(doc.views, code.views) || shouldUpdate(doc.indexes, code.indexes)
     inspect(viewsPending, 'is update needed?')
     if (viewsPending) {
       var rev = doc._rev
+	  console.log(code, rev)
       return updateDoc(db, docPath, code, rev, cb)
     }
     cb()

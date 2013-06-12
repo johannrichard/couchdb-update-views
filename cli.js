@@ -36,6 +36,7 @@ function sync(callback) {
           var docPath = '_design/' + file.fileName.replace(/\.js/,'')
           var doc = require(filePath)
           inspect(docPath, 'docPath')
+          console.log(doc, 'Into update')
           update(db, docPath, doc, cb)
         },
         callback

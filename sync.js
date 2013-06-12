@@ -24,6 +24,7 @@ function sync(callback) {
           var filePath = file.filePath
           var docPath = file.fileName
           var doc = require(filePath)
+		 
           update(db, docPath, doc, cb)
         },
         callback

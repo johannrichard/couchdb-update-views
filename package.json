@@ -1,6 +1,6 @@
 {
   "name": "couchdb-update-views",
-  "version": "1.0.14",
+  "version": "1.0.15-beta",
   "description": "Keep couchdb views up to date",
   "main": "sync.js",
   "directories": {
